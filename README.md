@@ -8,9 +8,10 @@ create .env file on root folder: ```vim .env``` then press 'i'
 pate: PORT=3000  
 click esc, then ':' then 'wq'  
 
-now run ```npm run server-dev```
+now run ```npm run server-dev```  
+  
 
-###API Documentaion
+### API Documentaion
 /products/?page=x&count=y      
 where x and y are integers  
 ```  
