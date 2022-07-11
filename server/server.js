@@ -1,12 +1,18 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const PORT = process.env.PORT;
 const handler = require('./handler.js')
 const app = express();
+const corsOptions = {
+  origin: 'http://localhost:8080',
+  optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
 
 
-app.get(`/products`, (req, res) => {
+app.get(`/products`,(req, res) => {
   const { page, count } = req.query;
   handler.getAllProduct(Number(page) || 1, Number(count) || 10).
     then(data => {
